@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Возвести числа в квадрат</title>
+<script>
+    function calculateSquares() {
+        var a = parseFloat(document.getElementById('number1').value);
+        var b = parseFloat(document.getElementById('number2').value);
+        var c = parseFloat(document.getElementById('number3').value);
+
+        var output = '';
+
+        if (!isNaN(a)) {
+            if (a >= 0) {
+                output += 'Квадрат первого неотрицательного числа: ' + (a * a) + '<br>';
+            }
+        } else {
+            output += 'Пожалуйста, введите числовое значение для первого числа<br>';
+        }
+
+        if (!isNaN(b)) {
+            if (b >= 0) {
+                output += 'Квадрат второго неотрицательного числа: ' + (b * b) + '<br>';
+            }
+        } else {
+            output += 'Пожалуйста, введите числовое значение для второго числа<br>';
+        }
+
+        if (!isNaN(c)) {
+            if (c >= 0) {
+                output += 'Квадрат третьего неотрицательного числа: ' + (c * c) + '<br>';
+            }
+        } else {
+            output += 'Пожалуйста, введите числовое значение для третьего числа<br>';
+        }
+
+        document.getElementById('output').innerHTML = output;
+    }
+</script>
+</head>
+<body>
+    <h2>Введите три числа:</h2>
+    <label for="number1">Первое число:</label>
+    <input type="text" id="number1"><br><br>
+
+    <label for="number2">Второе число:</label>
+    <input type="text" id="number2"><br><br>
+
+    <label for="number3">Третье число:</label>
+    <input type="text" id="number3"><br><br>
+
+    <button onclick="calculateSquares()">Рассчитать</button>
+
+    <div id="output"></div>
+</body>
+</html>

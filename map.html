@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Branches</title>
+    <style>
+        #tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="index.html">Домашняя страница</a></li>
+          <li><a href="book.html">Учебник</a></li>
+          <li><a href="test.html">Тест</a></li>
+          <li><a href="12labtext.html">О проекте</a>
+            <ul>
+              <li><a href="team.html">Команда</a></li>
+              <li><a href="14lab.html">Контакты</a></li>
+              <li><a href="Css.anim.html">Анимация CSS</a></li>
+            </ul>
+          </li>
+          <li><a href="">Поддержка</a>
+            <ul>
+              <li><a href="map.html">Телефон</a></li>
+              <li><a href="ghkrhghd.html">Почта</a></li>
+              <li><a href="gdjkhgdhg.html">Соц.Сети</a></li>
+            </ul>
+          </li>
+          <li><a href="validation.html">Личный кабинет</a></li>
+        </ul>
+      </nav>
+
+    <section>
+        <img id="map" src="img/novaya-karta-kazahstana-1440x810.jpg" width="700px" height="auto" alt="Map" usemap="#image-map">
+    
+        <map name="image-map">
+            <area shape="rect" coords="374,20,402,47" href="#1-rect" alt="Город: Петропавловск, Популярные языки программирования: Java, JavaScript, Python, C#,">
+            <area shape="rect" coords="412,114,427,134" href="#2-rect" alt="Город: Астана, Популярные языки программирования: JavaScript, Python, Ruby, ">
+            <area shape="rect" coords="519,296,542,316" href="#3-rect" alt="Город: Алматы, Популярные языки программирования: JavaScript, Python, C++,">
+            <area shape="rect" coords="94,192,113,207" href="#4-rect" alt="Город: Атырау, Популярные языки программирования: JavaScript, C#, Java,c++">
+            <area shape="rect" coords="384,55,408,349" href="#5-rect" alt="Город: Шымкент, Популярные языки программирования: JavaScript, Python, Ruby,">
+        </map>
+
+        <div id="tooltip"></div>
+    </section>
+
+    <script>
+        const areas = document.querySelectorAll('area');
+        const tooltip = document.getElementById('tooltip');
+
+        areas.forEach(area => {
+            area.addEventListener('mouseover', function() {
+                const info = this.getAttribute('alt').split(', ');
+                const city = info[0].split(': ')[1];
+                const address = info[1].split(': ')[1];
+                const schedule = info[2].split(': ')[1];
+                const number = info[3].split(': ')[1];
+                const coords = this.getBoundingClientRect();
+                tooltip.style.top = coords.top + 'px';
+                tooltip.style.left = coords.right + 'px';
+                tooltip.innerHTML = '<ul><li>Город: ' + city + '</li><li>Популярные языки: ' + address + '</li></ul>';
+                tooltip.style.display = 'block';
+            });
+
+            area.addEventListener('mouseout', function() {
+                tooltip.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

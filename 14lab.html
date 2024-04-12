@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="index.css">
+<title>Bubble Chart</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="index.html">Домашняя страница</a></li>
+          <li><a href="book.html">Учебник</a></li>
+          <li><a href="test.html">Тест</a></li>
+          <li><a href="12labtext.html">О проекте</a>
+            <ul>
+              <li><a href="team.html">Команда</a></li>
+              <li><a href="14lab.html">Контакты</a></li>
+              <li><a href="Css.anim.html">Анимация CSS</a></li>
+            </ul>
+          </li>
+          <li><a href="">Поддержка</a>
+            <ul>
+              <li><a href="map.html">Телефон</a></li>
+              <li><a href="cat_mouse.html">Почта</a></li>
+              <li><a href="gdjkhgdhg.html">Соц.Сети</a></li>
+            </ul>
+          </li>
+          <li><a href="validation.html">Личный кабинет</a></li>
+        </ul>
+      </nav>
+<canvas id="bubbleChart" width="600" height="400"></canvas>
+
+<script>
+var ctx = document.getElementById('bubbleChart').getContext('2d');
+
+// Фейковые данные - количество детских учреждений дошкольного образования в разных городах
+var data = {
+    datasets: [{
+        label: 'Учреждения дошкольного образования',
+        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        data: [{
+            x: 10,
+            y: 20,
+            r: 30 // Радиус пузырька
+        }, {
+            x: 30,
+            y: 40,
+            r: 20
+        }, {
+            x: 50,
+            y: 30,
+            r: 25
+        }, {
+            x: 70,
+            y: 40,
+            r: 15
+        }, {
+            x: 90,
+            y: 60,
+            r: 35
+        }]
+    }]
+};
+
+var myBubbleChart = new Chart(ctx, {
+    type: 'bubble',
+    data: data,
+    options: {
+        animation: {
+            duration: 2000 // Время анимации в миллисекундах
+        },
+        tooltips: {
+            callbacks: {
+                label: function(tooltipItem, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                    label += ': (' + tooltipItem.xLabel + ', ' + tooltipItem.yLabel + ')';
+                    return label;
+                }
+            }
+        },
+        scales: {
+            yAxes: [{
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Год'
+                }
+            }],
+            xAxes: [{
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Количество учреждений'
+                }
+            }]
+        }
+    }
+});
+</script>
+
+</body>
+</html>

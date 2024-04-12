@@ -1,0 +1,325 @@
+
+/* Стили для SVG элементов */
+svg {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 50px auto;
+}
+
+/* Анимация для круга */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Анимация для крестика */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Анимация для заливки */
+@keyframes fill {
+  0% {
+    fill: red;
+  }
+  50% {
+    fill: blue;
+  }
+  100% {
+    fill: green;
+  }
+}
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Анимация для секции "Домашняя страница" */
+#home {
+  animation: slideInLeft 1s ease-out;
+}
+
+/* Анимация для секции "Учебник" */
+#textbook {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Анимация для секции "Курсы" */
+#courses {
+  animation: rotateIn 1s ease-in-out;
+}
+
+/* Анимация для секции "Тест" */
+#test {
+  animation: bounceIn 1s ease-out;
+}
+
+/* Анимация для секции "О проекте" */
+#about {
+  animation: slideInRight 1s ease-out;
+}
+
+/* Анимация для секции "Контакты" */
+#contact {
+  animation: zoomIn 1s ease-out;
+}
+
+/* Анимация для секции "Политика конфиденциальности" */
+#policy {
+  animation: flipInX 1s ease-out;
+}
+
+/* Ключевые кадры для анимаций */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(-180deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes flipInX {
+  from {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+/* Дополнительные стили */
+main {
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+nav ul li:hover ul {
+  display: block;
+}
+
+nav ul li ul li {
+  width: 100%;
+}
+
+nav ul li ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav ul li ul li a:hover {
+  background-color: #f0f0f0;
+}
+
+.section-content {
+  display: none;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + label {
+  display: block;
+  background-color: #f4f4f4;
+  padding: 10px;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked + label {
+  background-color: #ddd;
+}
+input[type="checkbox"] + label + .section-content {
+  display: none;
+  padding: 10px;
+}
+input[type="checkbox"]:checked + label + .section-content {
+  display: block;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  header {
+    background-color: #3f98b9;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  nav {
+    background-color: #333;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+  
+  nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  nav a:hover {
+    background-color: #555;
+  }
+  
+  main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  @media (max-width: 600px) {
+    nav ul {
+      display: block;
+    }
+  
+    nav li {
+      display: block;
+      margin: 0;
+    }
+  }

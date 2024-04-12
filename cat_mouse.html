@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="index.css">
+<title>Коты и мыши</title>
+<style>
+    body {
+        background-image: url("img/mouse_and_cat.jpg"); /* Замените на свой фоновый рисунок */
+        background-size: cover;
+        color: rgb(0, 0, 0);
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    #dede {
+        display: none; /* Начнем с изображения "dede.jpg", которое будет скрыто */
+    }
+
+    #content {
+        margin-top: 50px;
+    }
+
+    img {
+        max-width: 300px;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="index.html">Домашняя страница</a></li>
+          <li><a href="book.html">Учебник</a></li>
+          <li><a href="test.html">Тест</a></li>
+          <li><a href="12labtext.html">О проекте</a>
+            <ul>
+              <li><a href="team.html">Команда</a></li>
+              <li><a href="14lab.html">Контакты</a></li>
+              <li><a href="Css.anim.html">Анимация CSS</a></li>
+            </ul>
+          </li>
+          <li><a href="">Поддержка</a>
+            <ul>
+              <li><a href="map.html">Телефон</a></li>
+              <li><a href="cat_mouse.html">Почта</a></li>
+              <li><a href="gdjkhgdhg.html">Соц.Сети</a></li>
+            </ul>
+          </li>
+          <li><a href="validation.html">Личный кабинет</a></li>
+        </ul>
+      </nav>
+      <main >
+
+<div id="content">
+    <h1>Рассказ про котов и мышей</h1>
+    <p>Коты и мыши - вечные враги, слово "кот" встречается в тексте не менее 5 раз.</p>
+    <p>Однажды в доме появился маленький котенок. Он был очень игривым и любопытным. Но в доме уже жила...</p>
+    <p>Поиграйте мышью над словом "кот" в тексте, чтобы увидеть, что произойдет!</p>
+</div>
+
+<img id="dede" src="img/maxresdefault.jpg" alt="Dede" height="1500" width="1500">
+
+<audio id="meow" src="img/Сквазимабзабза (256  kbps).mp3"></audio>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // При наведении на слово "кот" в тексте
+        $('p:contains("кот")').each(function() {
+            var html = $(this).html();
+            html = html.replace(/(кот)/g, '<span class="cat-word">$1</span>'); // Обернуть слово "кот" в тег <span>
+            $(this).html(html);
+        });
+
+        // При наведении мыши на слово "кот"
+        $('.cat-word').hover(function() {
+            $(this).fadeOut('fast'); // Скрыть слово "кот"
+            $('#dede').fadeIn('fast'); // Показать изображение 
+            document.getElementById('meow').play(); // Проиграть аудио 
+        }, function() {
+            $(this).fadeIn('fast'); // Показать слово "кот" обратно
+            $('#dede').fadeOut('fast'); // Скрыть изображение 
+        });
+    });
+</script>
+
+</body>
+</html>

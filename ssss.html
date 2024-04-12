@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма обратной связи</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Форма обратной связи</h1>
+    <form id="feedbackForm">
+        <div>
+            <label for="name">Имя:</label>
+            <input type="text" id="name" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+        </div>
+        <div>
+            <label for="gender">Пол:</label>
+            <select id="gender" required>
+                <option value="">Выберите пол</option>
+                <option value="male">Мужской</option>
+                <option value="female">Женский</option>
+            </select>
+        </div>
+        <div>
+            <label>Интересы:</label>
+            <div>
+                <input type="checkbox" id="interest1" value="programming">
+                <label for="interest1">Программирование</label>
+            </div>
+            <div>
+                <input type="checkbox" id="interest2" value="design">
+                <label for="interest2">Дизайн</label>
+            </div>
+        </div>
+        <div>
+            <label>Подписаться на рассылку:</label>
+            <div>
+                <input type="radio" id="subscribeYes" name="subscribe" value="yes">
+                <label for="subscribeYes">Да</label>
+            </div>
+            <div>
+                <input type="radio" id="subscribeNo" name="subscribe" value="no">
+                <label for="subscribeNo">Нет</label>
+            </div>
+        </div>
+        <div>
+            <label for="message">Сообщение:</label>
+            <textarea id="message" required></textarea>
+        </div>
+        <button type="submit">Отправить</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

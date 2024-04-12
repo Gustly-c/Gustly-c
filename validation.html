@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма заявки</title>
+    <link rel="stylesheet" href="validation.css">
+    <script src="validation.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="index.html">Домашняя страница</a></li>
+          <li><a href="book.html">Учебник</a></li>
+          <li><a href="test.html">Тест</a></li>
+          <li><a href="12labtext.html">О проекте</a>
+            <ul>
+              <li><a href="team.html">Команда</a></li>
+              <li><a href="14lab.html">Контакты</a></li>
+              <li><a href="Css.anim.html">Анимация CSS</a></li>
+            </ul>
+          </li>
+          <li><a href="">Поддержка</a>
+            <ul>
+              <li><a href="map.html">Телефон</a></li>
+              <li><a href="ghkrhghd.html">Почта</a></li>
+              <li><a href="gdjkhgdhg.html">Соц.Сети</a></li>
+            </ul>
+          </li>
+          <li><a href="validation.html">Личный кабинет</a></li>
+        </ul>
+      </nav>
+    <form id="applicationForm">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        
+        <label for="message">Сообщение:</label>
+        <textarea id="message" required></textarea>
+        
+        <button type="submit">Отправить</button>
+    </form>
+    <div id="userData" style="display: none;"></div>
+</body>
+</html>

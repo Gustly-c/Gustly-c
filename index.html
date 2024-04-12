@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>JavaScript Mastery</title>
+  <script src="script.js" defer></script>
+ </head>
+<body>
+  <header>
+    <h1>JavaScript Mastery</h1>
+    <p>Онлайн-платформа для обучения JavaSript с основального до продвинутого уровня.</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Домашняя страница</a></li>
+      <li><a href="book.html">Учебник</a></li>
+      <li><a href="test.html">Тест</a></li>
+      <li><a href="12labtext.html">О проекте</a>
+        <ul>
+          <li><a href="team.html">Команда</a></li>
+          <li><a href="14lab.html">Контакты</a></li>
+          <li><a href="Css.anim.html">Анимация CSS</a></li>
+        </ul>
+      </li>
+      <li><a href="">Поддержка</a>
+        <ul>
+          <li><a href="map.html">Телефон</a></li>
+          <li><a href="cat_mouse.html">Почта</a></li>
+          <li><a href="gdjkhgdhg.html">Соц.Сети</a></li>
+        </ul>
+      </li>
+      <li><a href="validation.html">Личный кабинет</a></li>
+    </ul>
+  </nav>
+  <main >
+    <section id="home" style="animation: slideInFromLeft 1s ease-out;">
+      <h2>Домашняя страница</h2>
+      <p>Добро пожаловать на Мастерство JavaScript, онлайн-платформу для обучения JavaScript с основального до продвинутого уровня. Наш подробный учебник дает всестороннее понимание языка программирования, охватывая как основные принципы, так и расширенные возможности JavaScript.</p>
+  </main>  
+  <main>
+    </section>
+    <section id="textbook" style="animation: slideInFromLeft 1s ease-out;">
+      <h2>Учебник</h2>
+      <p>Наш учебник - подробное руководство по изучению JavaScript, начиная с оснований и заканчивая расширенными темами.</p>
+    </section>
+  </main>
+  <main>
+    <section id="courses" style="animation: slideInFromLeft 1s ease-out;">
+      <h2>Курсы</h2>
+      <p>Наши структурированные учебные пути с серией уроков и упражнений помогут вам освоить JavaScript с основального до продвинутого уровня.</p>
+    </section>
+    </main>
+  <main>
+    <section id="test" style="animation: slideInFromLeft 1s ease-out;">
+      <h2>Тест</h2>
+      <p>Сдайте наш тест, чтобы определить ваше понимание JavaScript.</p>
+    </section>
+  </main>
+  <main>
+    <section id="about" style="animation: slideInFromLeft 1s ease-out;">
+      <h2>О проекте</h2>
+      <p>Узнайте больше о проекте Мастерство JavaScript, нашей команде и нашей миссии.</p>
+    </section>
+  </main>
+  <main>
+    <section id="contact" style="animation: slideInFromLeft 1s ease-out;">
+      <h2>Контакты</h2>
+      <p>Свяжитесь с нашей командой, чтобы узнать больше о нашей платформе и как мы можем помочь вам освоить JavaScript.</p>
+    </section>
+    </main>
+    <main>
+    <section id="policy" style="animation: slideInFromLeft 1s ease-out;">
+      <h2>Политика конфиденциальности</h2>
+      <p>Прочтите наше соглашение пользователя и политику конфиденциальности, чтобы узнать больше о том, как мы защищаем ваши данные и уважаем вашу конфиденциальность.</p>
+    </section>
+  </main>
+  <a href="12labtext.html" id="openWindowLink">Открыть новое окно</a>
+  <!-- SVG элементы с применением анимаций -->
+  <svg viewBox="0 0 100 100">
+    <!-- Анимация для круга -->
+    <circle cx="5" cy="5" r="4" fill="none" stroke="black" stroke-width="1">
+      <animate attributeName="r" values="4;4;4" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="stroke-width" values="2;6;2" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </svg>
+
+  <svg viewBox="0 0 100 100">
+    <!-- Анимация для крестика -->
+    <path d="M20 20 L80 80 M80 20 L20 80" stroke="black" stroke-width="4" fill="none">
+      <animateTransform attributeName="transform" type="rotate" values="0 50 50;360 50 50" dur="2s" repeatCount="indefinite" />
+    </path>
+  </svg>
+
+  <svg viewBox="0 0 100 100">
+    <!-- Анимация для заливки -->
+    <rect x="10" y="10" width="15" height="15" fill="red">
+      <animate attributeName="fill" values="red;blue;green;red" dur="3s" repeatCount="indefinite" />
+    </rect>
+  </svg>
+  <footer>
+    <p>&copy; 2023 Мастерство JavaScript. Все права защищены.</p>
+  </footer>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="position: absolute; width: 0; height: 0; opacity: 0;">
+    <defs>
+      <mask id="mask" x="0" y="0" width="100" height="100">
+        <circle cx="50" cy="50" r="40" fill="#fff" />
+      </mask>
+    </defs>
+  </svg>
+  
+</body>
+</html>

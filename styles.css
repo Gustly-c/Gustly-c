@@ -1,0 +1,21 @@
+#menu .submenu-items {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+  }
+  
+  #menu .submenu-items li {
+    padding: 10px;
+  }
+  
+  #menu .submenu-items li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  #menu .submenu:hover .submenu-items {
+    display: block;
+  }
+  

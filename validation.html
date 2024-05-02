@@ -31,18 +31,27 @@
         </ul>
       </nav>
 <div id="loginForm">
-    <h2>Введите логин, пароль и секретное слово:</h2>
+    <h2>Введите логин и пароль:</h2>
     <form id="credentialsForm">
       <input type="text" id="login" placeholder="Логин" required><br>
       <input type="password" id="password" placeholder="Пароль" required><br>
-      <input type="text" id="secretWord" placeholder="Секретное слово" required><br>
       <button type="submit">Войти</button>
+    </form>
+  </div>
+
+  <div id="secretWordForm" style="display: none;">
+    <h2>Введите секретное слово:</h2>
+    <form id="secretWordInputForm">
+      <input type="text" id="secretWordInput" placeholder="Секретное слово" required><br>
+      <button type="submit">Показать данные</button>
     </form>
   </div>
 
   <div id="secretData" style="display: none;">
     <h2>Секретные данные:</h2>
-    <p id="cookieData"></p>
+    <p id="loginData"></p>
+    <p id="passwordData"></p>
+    <p id="dateData"></p>
   </div>
 
   <script>
@@ -50,33 +59,48 @@
       event.preventDefault();
       var login = document.getElementById('login').value;
       var password = document.getElementById('password').value;
-      var secretWord = document.getElementById('secretWord').value;
+
+      // Сохранение логина и пароля в cookie
+      document.cookie = `login=${login}`;
+      document.cookie = `password=${password}`;
+
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('secretWordForm').style.display = 'block';
+    });
+
+    document.getElementById('secretWordInputForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var secretWord = document.getElementById('secretWordInput').value;
 
       // Проверка корректности секретного слова
       if (secretWord === 'ваше_секретное_слово') {
-        // Сохранение данных в cookie
-        var expiryDate = new Date();
-        expiryDate.setDate(expiryDate.getDate() + 2);
-        document.cookie = `login=${login}; expires=${expiryDate.toUTCString()}`;
-        document.cookie = `password=${password}; expires=${expiryDate.toUTCString()}`;
-        document.cookie = `secretWord=${secretWord}; expires=${expiryDate.toUTCString()}`;
+        // Получение логина и пароля из cookie
+        var login = getCookie('login');
+        var password = getCookie('password');
 
-        // Показ секретных данных
-        document.getElementById('cookieData').innerText = document.cookie;
+        // Вывод данных
+        document.getElementById('loginData').innerText = `Логин: ${login}`;
+        document.getElementById('passwordData').innerText = `Пароль: ${password}`;
+
+        // Получение текущей даты
+        var currentDate = new Date();
+        var dateString = currentDate.toLocaleDateString();
+
+        // Вывод текущей даты
+        document.getElementById('dateData').innerText = `Дата: ${dateString}`;
+
+        document.getElementById('secretWordForm').style.display = 'none';
         document.getElementById('secretData').style.display = 'block';
       } else {
         alert('Неправильное секретное слово!');
       }
     });
 
-    // Проверка наличия сохраненных данных в cookie при загрузке страницы
-    window.onload = function() {
-      var cookieData = document.cookie;
-      if (cookieData) {
-        document.getElementById('cookieData').innerText = cookieData;
-        document.getElementById('secretData').style.display = 'block';
-      }
-    };
+    // Функция для получения значения cookie по имени
+    function getCookie(name) {
+      var matches = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
+      return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
   </script>
 </body>
 </html>
